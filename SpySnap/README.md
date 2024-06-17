@@ -1,6 +1,12 @@
 # SpySnap
 
-SpySnap is an educational tool designed to demonstrate how webcams and their access can be managed and utilized in web applications.
+SpySnap is an educational tool designed to demonstrate webcam access management in web applications, fostering awareness of webcam security practices and access control.
+
+## Features
+
+- **Webcam Access:** Illustrates integration of webcam functionalities in web applications.
+- **Educational Purpose:** Intended for educational use to promote understanding of webcam security.
+- **Legal and Ethical:** Emphasizes responsible usage and adherence to privacy laws and ethical considerations.
 
 ## Usage
 
@@ -18,21 +24,19 @@ To run SpySnap locally:
 
 3. Visit the ngrok URL provided to access SpySnap in your browser.
 
-## Features
-
-- **Webcam Access:** Demonstrates how to access and manage webcam functionalities using web technologies.
-- **Educational Purpose:** Intended for educational purposes to understand webcam security and access control.
-- **Legal and Ethical Use:** Emphasizes responsible usage and respect for privacy laws and ethical considerations.
-
 ## Disclaimer
 
-SpySnap is strictly intended for educational purposes and ethical use. Ensure you comply with all applicable laws and respect privacy rights when using or modifying this tool.
+SpySnap is strictly intended for educational purposes and ethical use. Users are responsible for compliance with all applicable laws and privacy rights.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
 ### Notes:
 
-- **Ethical Use:** Clearly state the ethical use of your tool and emphasize its educational purpose.
-- **Legal Considerations:** Include a disclaimer to remind users about legal responsibilities and adherence to privacy laws.
-- **Documentation:** Provide clear instructions on how to set up and use your tool.
-- **License:** Specify the license under which your project is distributed.
+- **Ethical Use:** SpySnap is intended solely for educational purposes and to promote ethical use of webcam functionalities.
+- **Legal Considerations:** Users must ensure compliance with all laws regarding privacy and data protection.
+- **Documentation:** Clear instructions are provided for setting up and using SpySnap.
+- **License:** This project is licensed under the MIT License.
